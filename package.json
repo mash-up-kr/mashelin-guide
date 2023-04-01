@@ -6,14 +6,27 @@
     "type": "git",
     "url": "https://github.com/minidonut/mashelin-guide"
   },
-  "license": "MIT",
-  "author": {
-    "name": "Karl Saehun Chung",
-    "email": "nycom13@gmail.com"
+  "bin": {
+    "mashelin-guide": "dist/cli.js"
   },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Karl Saehun Chung",
+      "email": "nycom13@gmail.com"
+    },
+    {
+      "name": "박지원",
+      "email": ""
+    },
+    {
+      "name": "조혜온",
+      "email": ""
+    }
+  ],
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.esm.json && ./register.sh",
     "lint": "eslint . --ext .js,.ts",
     "start": "ts-node src/index.ts",
     "start:debug": "node --require ts-node/register --inspect-brk src/index.ts",

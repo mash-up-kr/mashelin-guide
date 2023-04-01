@@ -1,10 +1,10 @@
 {
   "name": "mashelin-guide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/minidonut/mashelin-guide"
+    "url": "https://github.com/mash-up-kr/mashelin-guide"
   },
   "bin": {
     "mashelin-guide": "dist/cli.js"

@@ -39,7 +39,7 @@ TBD
 
 <a name="features"></a>
 
-# ✅ Features
+## ✅ Features
 
 - **맛집 검색:** 매쉬업 멤버들의 맛집 픽을 검색할 수 있습니다.
 
@@ -53,7 +53,7 @@ TBD
 
 <a name="installation"></a>
 
-# Installation
+## Installation
 
 설치하지 않아도 바로 사용할 수 있습니다! 다음 명령어를 터미널에서 실행해보세요:
 
@@ -69,7 +69,7 @@ npm i -g mashelin-guide
 
 <a name="usage"></a>
 
-# 📋 Usage
+## 📋 Usage
 
 ```bash
 npx mashelin-guide
@@ -95,7 +95,7 @@ npx mashelin-guide
 
 <a name="setup-locally"></a>
 
-# 📟 Set Up Locally
+## 📟 Set Up Locally
 
 ```bash
 # -- 레포를 클론해주세요
@@ -113,7 +113,7 @@ pnpm run start
 
 <a name="programmatic-usage"></a>
 
-# 🧑🏻‍💻 Programmatic usage
+## 🧑🏻‍💻 Programmatic Usage
 
 ```ts
 import { MashelinGuide } from 'mashelin-guide';
@@ -125,7 +125,7 @@ import { MashelinGuide } from 'mashelin-guide';
 
 <a name="roadmap"></a>
 
-# 🔮 Roadmap
+## 🔮 Roadmap
 
 - [ ] 릴리즈 0.1.0 !
 - [ ] 코드 개선
@@ -140,7 +140,7 @@ import { MashelinGuide } from 'mashelin-guide';
 
 <a name="known-bugs"></a>
 
-# 🐞 Known bugs
+## 🐞 Known bugs
 
 - Sometimes, CLI is blocked while folder is deleting.
 
@@ -148,13 +148,13 @@ import { MashelinGuide } from 'mashelin-guide';
 
 <a name="contributing"></a>
 
-# 💞 Contributing
+## 💞 Contributing
 
 이 프로젝트에 기여를 하고 싶다면 [CONTRIBUTING.md](.github/CONTRIBUTING.md)을 참고해주세요
 
 <a name="license"></a>
 
-# 📜 License
+## 📜 License
 
 MIT © [Karl Saehun Chung](https://github.com/minidonut) and [Hyeon Cho](https://github.com/hye-on) and [ Jiwon Park](https://github.com/pjw5521)
 

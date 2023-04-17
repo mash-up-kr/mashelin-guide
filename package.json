@@ -28,7 +28,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.esm.json && ./register.sh",
     "lint": "eslint . --ext .js,.ts",
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/cli.ts",
     "start:debug": "node --require ts-node/register --inspect-brk src/index.ts",
     "test": "NODE_ENV=test jest",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"

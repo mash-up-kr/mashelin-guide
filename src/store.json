@@ -1,0 +1,7 @@
+[
+  { "name": "피자스쿨", "address": "동작구", "type": "양식" },
+  { "name": "서울황태", "address": "강남구", "type": "한식" },
+  { "name": "서울주막", "address": "서초구", "type": "양식" },
+  { "name": "금복주류", "address": "서초구", "type": "한식" },
+  { "name": "이자카야 나무", "address": "서초구", "type": "일식" }
+]

@@ -1,5 +1,7 @@
 import mock from './mock-data.json';
 import store from './store.json';
+import path from 'path';
+import fs from 'fs';
 /**
  * 매쉬업 맛집 목록을 가져옵니다.
  */
@@ -17,6 +19,27 @@ export function getMashup맛집byType(t: string) {
     }
   }
   return data;
+}
+
+export function enterStoreInfo(storeInfo: any[]) {
+  if (isExists(storeInfo[0], storeInfo[1])) {
+    return false;
+  } else {
+    const storeT = {
+      name: storeInfo[0],
+      address: storeInfo[1],
+      type: storeInfo[2],
+    };
+
+    const filePath = path.join(__dirname, 'store.json');
+    const fileData = fs.readFileSync(filePath);
+    const fileJSON = fileData.toString();
+    const a = JSON.parse(fileJSON);
+    a.push(storeT);
+    fs.writeFileSync(filePath, JSON.stringify(a));
+  }
+
+  return true;
 }
 //가게 이름, 위치로 등록되어 있는지 찾기
 export function isExists(name: string, address: string) {

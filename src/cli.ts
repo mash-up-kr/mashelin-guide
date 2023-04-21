@@ -1,13 +1,21 @@
 // import { getMashup맛집 } from '.';
 import readline from 'readline';
-import { getMashup맛집, getMashup맛집byType, isExists } from '.';
-import fs from 'fs';
-import path from 'path';
+import { enterStoreInfo, getMashup맛집, getMashup맛집byType, isExists } from '.';
+
+import { contentsQuestion, storeInfoQuestion } from './question';
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
+
+var question = function (q: string) {
+  return new Promise((res, rej) => {
+    rl.question(q, answer => {
+      res(answer);
+    });
+  });
+};
 
 const temp = (answer: string) => {
   if (answer === '양식' || answer === '중식' || answer === '일식' || answer === '한식') {
@@ -18,7 +26,7 @@ const temp = (answer: string) => {
   }
 };
 
-const mashelinChoice = (answer: string) => {
+const mashelinChoice = async (answer: string) => {
   if (answer === '1') {
     console.log('매셥 맛집입니다 ~!! ♡〜٩( ˃́▿˂̀ )۶〜♡ \n');
 
@@ -30,34 +38,20 @@ const mashelinChoice = (answer: string) => {
     let nameT: any;
     let addressT: any;
     let typeT: any;
+    //
 
-    rl.question('이름을 입력하세요 !', input => {
-      nameT = input;
-      rl.question('주소 입력하세요 !', input => {
-        addressT = input;
-        rl.question('양식, 중식, 한식, 일식중에 선택해서 입력하세요(택1) ', input => {
-          typeT = input;
-          const storeT = {
-            name: nameT,
-            address: addressT,
-            type: typeT,
-          };
-          if (isExists(nameT, addressT)) {
-            console.log('이미 등록되어 있습니다.');
-            rl.close();
-          } else {
-            // console.log(storeT);
-            const filePath = path.join(__dirname, 'store.json');
-            const fileData = fs.readFileSync(filePath);
-            const fileJSON = fileData.toString();
-            const a = JSON.parse(fileJSON);
-            a.push(storeT);
-            fs.writeFileSync(filePath, JSON.stringify(a));
-            rl.close();
-          }
-        });
-      });
-    });
+    var answer2;
+    let ans = [];
+    for (let i = 0; i < storeInfoQuestion.length; i++) {
+      ans.push(await question(storeInfoQuestion[i]));
+    }
+    if (enterStoreInfo(ans)) {
+      console.log('등록되었습니다.');
+      rl.close();
+    } else {
+      console.log('이미 등록되어 있습니다.');
+    }
+    rl.close();
   } else {
     console.clear();
     rl.question('\n1 or 2 or 3 만 입력해요 (ꐦ •᷄ࡇ•᷅) ', mashelinChoice);
@@ -68,10 +62,9 @@ console.clear();
 const contents = (): void => {
   console.log('<<< (*●⁰ꈊ⁰●)ﾉ  mashelin-guide   (*●⁰ꈊ⁰●)ﾉ  >>>');
   console.log('\n============================================\n');
-  console.log('1. 매시업 맛집 보기');
-  console.log('2. 매시업 맛집 검색하기');
-  console.log('3. 매시업 맛집 등록하기\n');
-
+  for (const q of contentsQuestion) {
+    console.log(`${q}`);
+  }
   rl.question('Enter only 1 or 2 or 3 : ', mashelinChoice);
 };
 

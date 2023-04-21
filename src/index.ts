@@ -2,6 +2,7 @@ import mock from './mock-data.json';
 import store from './store.json';
 import path from 'path';
 import fs from 'fs';
+import { types } from './question';
 /**
  * 매쉬업 맛집 목록을 가져옵니다.
  */
@@ -51,4 +52,12 @@ export function isExists(name: string, address: string) {
   return false; //등록 x
 }
 
+export function typeCheck(type: string) {
+  for (const t of types) {
+    if (t === type) {
+      return true;
+    }
+  }
+  return false;
+}
 export function viewMap() {}

@@ -6,4 +6,6 @@ const storeInfoQuestion = [
   '양식, 중식, 한식, 일식중에 선택해서 입력하세요(택1) ',
 ];
 
-export { contentsQuestion, storeInfoQuestion };
+const types = ['양식', '중식', '한식', '일식'];
+
+export { contentsQuestion, storeInfoQuestion, types };

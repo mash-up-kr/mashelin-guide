@@ -7,7 +7,7 @@
     "url": "https://github.com/mash-up-kr/mashelin-guide"
   },
   "bin": {
-    "mashelin-guide": "src/cli.js"
+    "mashelin-guide": "src/cli.ts"
   },
   "license": "MIT",
   "contributors": [

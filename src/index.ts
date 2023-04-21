@@ -42,10 +42,10 @@ export function enterStoreInfo(storeInfo: any[]) {
 
   return true;
 }
-//가게 이름, 위치로 등록되어 있는지 찾기
+//가게 이름, 위치로 등록되어 있는지 찾기s
 export function isExists(name: string, address: string) {
   for (let i = 0; i < store.length; i++) {
-    if (store[0].name === name && store[i].address === address) {
+    if (store[i].name === name && store[i].address === address) {
       return true; //이미 등록
     }
   }

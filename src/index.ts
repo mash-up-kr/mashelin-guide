@@ -1,4 +1,3 @@
-import mock from './mock-data.json';
 import store from './store.json';
 import path from 'path';
 import fs from 'fs';
